@@ -39,63 +39,101 @@ Y listo, ya hemos instalado Red Lazarus, podremos hacer de todo con la consola, 
 Proceso script .gm9:
 
 # Script que Resucita Consolas de la familia 3DS
+
 # Realizado por Angelpro09_xd
+
 set PREVIEW_MODE 0:/gm9/imagenes/RedLazarus.png
 
 ################# Red Red Lazarus 2.0 #################
+
 ask "Este Script revive Consolas BRICKEADAS\nContinuar?"
+
 set ERRORMSG "Cancelado por el usuario."
 
 set ERRORMSG "Cancelado por el usuario."
+
 allow -a S:
 
 ################# Comprobacion de Archivos ################# 
+
 set ERRORMSG "ARCHIVOS NECESARIOS NO ENCONTRADOS. \n \nVUELVE A DESCARGAR O USA OTRA TARJETA SD "
+
 find 0:/RedLazarus/twln.bin TWLN
+
 find 0:/RedLazarus/twlp.bin TWLP
+
 find 0:/RedLazarus/sighax_hdr_*.bin SIGHAX
+
 find 0:/RedLazarus/boot9stra*.firm B9S
+
 find 0:/RedLazarus/sector0x9*.bin SECRET
+
 find 0:/RedLazarus/NAND_hdr.bin HDR
+
 find 0:/RedLazarus/twlmbr.bin TWLMBR
+
 find 0:/RedLazarus/ctrtransfer_o2ds.bin CTRNAND
 
 ################# Restaurando NAND, TWL, Formateando ################# 
+
 set ERRORMSG "ERROR EN LA RESTAURACION. \n \nVUELVE A DESCARGAR O USA OTRA TARJETA SD"
+
 cp -w -n $[HDR] S:/nand.bin
+
 cp -w -n $[SIGHAX] S:/nand_hdr.bin
+
 cp -w -n $[TWLMBR] S:/twlmbr.bin
+
 cp -w -n $[TWLN] S:/twln.bin
+
 cp -w -n $[TWLP] S:/twlp.bin
+
 cp -w -n $[CTRNAND] S:/ctrnand_full.bin
 
 
 fixcmac 1:/dbs
+
 fixcmac 1:/title
-fixcmac 1:/dbs																
+
+fixcmac 1:/dbs		
+
 fixcmac 1:/private
+
 cp -w -o -s 0:gm9/Movable/Movable.sed 1:/private/movable.sed
+
 fixcmac 1:/dbs
+
 fixcmac 1:/title
-fixcmac 1:/dbs																
+
+fixcmac 1:/dbs			
+
 fixcmac 1:/private							
 
 
 ###################### Instalando Boot9 #####################
+
 set ERRORMSG "No se pudo inyectar boot9strap!\n \nUsar SafeB9SInstaller al terminar."
+
 cp -w -o -n $[B9S] S:/firm0.bin
+
 cp -w -o -n $[B9S] S:/firm1.bin
 
 ###################### Reparando SecretSector #####################
+
 cp -w $[SECRET] S:/sector0x96.bin
 
 ###################### Finalizacion #####################
+
 mv -w -o -s 0:/RedLazarus/GodMode9.firm 1:/rw/luma/payloads/GodMode9.firm
+
 cp -w -o -s 0:/RedLazarus/luma.firm 0:/boot.firm
+
 mv -w -o -s 0:/RedLazarus/luma.firm 1:/boot.firm
+
 rm -o -s 0:/RedLazarus
 
 echo "Consola Revivida. \n \nRecuerda actualizar consola\n desde Recovery"
+
 reboot
 
 Red Lazarus permite restaurar y limpiar cualquier nand de las consolas 3ds, ya que sobrescribe los archivos, podiendo eliminar y reparar cualquier tipo de error en la consola.

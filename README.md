@@ -40,7 +40,15 @@ Proceso script .gm9:
 
 # Script que Resucita Consolas de la familia 3DS
 
-# Realizado por Angelpro09_xd
+# Créditos: 
+
+# AnalogMan151, creador de Lazarus
+
+# Angelpro09_xd, descubridor y cocreador de Red Lazarus y Red Lazarus 2023
+
+# Yakara Colombia, aportador de Archivos Donantes y creador de la primera sismplificación de Lazarus en 2017
+
+# Kelonio 3Ds, creador de la Segunda simplificación de Lazarus en 2022, cocreador estructural de Red Lazarus, autor de Movable-Format(usado para eliminar y restaurar el mobable)
 
 set PREVIEW_MODE 0:/gm9/imagenes/RedLazarus.png
 

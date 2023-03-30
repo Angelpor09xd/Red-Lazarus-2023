@@ -145,6 +145,5 @@ echo "Consola Revivida. \n \nRecuerda actualizar consola\n desde Recovery"
 reboot
 
 Red Lazarus permite restaurar y limpiar cualquier nand de las consolas 3ds, ya que sobrescribe los archivos, podiendo eliminar y reparar cualquier tipo de error en la consola.
-De momento a dia 27/02/2023 red lazarus solo esta disponible para las consolas old 2ds, ya que se hixieron pruebas solo en esa consola y hay que compilar y cambiar el scrpt para en algun futuro, llevar los scripts a mas consolas. 
 
-Si alguien le interesaria ayurdarme gratuitamente estoy de acurdo siempre y cuando sepa del tema entienda como funcian red lazarus.
+Red Lazarus solo esta disponible para las consolas old 2ds y new 3ds, en algun fututro llevare este script a mas consolas.
